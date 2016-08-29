@@ -1,0 +1,19 @@
+#
+# DeLorean prompt circuit.
+#
+
+fpath=("${ZDOTDIR}/circuits/prompt-pure/setup" $fpath)
+
+function circuit-prompt-pure {
+
+  autoload -Uz promptinit; promptinit
+
+  if [[ "$TERM" == (dumb|linux|*bsd*) ]]; then
+    prompt 'off'
+  else
+    prompt 'pure'
+  fi
+
+}
+
+return 0
